@@ -12,7 +12,7 @@ Práitica de lógica de programação através deste desafio de criar um App de 
 
 Javascript, HTML, CSS...
 
-## Uso/Exemplos
+## 🕹 Uso/Exemplos
 
 #### Função para formatar número para 3 digítos
 
