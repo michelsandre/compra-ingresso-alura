@@ -30,7 +30,7 @@ function validaCompra(tipo, qtd) {
   if (ingressosDisponiveis[tipo] - qtd >= 0) {
     ingressosDisponiveis[tipo] -= qtd;
   } else {
-    let tipoIngresso =
+    const tipoIngresso =
       tipo == "pista"
         ? "Pista"
         : tipo == "inferior"
