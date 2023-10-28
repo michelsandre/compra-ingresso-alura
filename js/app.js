@@ -8,9 +8,9 @@ let elemQuantidadeInferior = document.getElementById("qtd-inferior");
 
 // INGRESSOS DISPONIVEIS
 let ingressosDisponiveis = {
-  pista: elemQuantidadePista.textContent * 1,
-  superior: elemQuantidadeSuperior.textContent * 1,
-  inferior: elemQuantidadeInferior.textContent * 1,
+  pista: parseInt(elemQuantidadePista.textContent),
+  superior: parseInt(elemQuantidadeSuperior.textContent),
+  inferior: parseInt(elemQuantidadeInferior.textContent),
 };
 
 // FUNCAO FORMATA QUANTIDADE DE DIGITOS PARA 3
@@ -24,7 +24,7 @@ function comprar() {
   // Captura o tipo do ingresso + quantidade
   let ingresso = {
     tipo: elemTipoIngresso.value,
-    quantidade: elemQuantidade.value * 1,
+    quantidade: parseInt(elemQuantidade.value),
   };
 
   validaCompra(ingresso.tipo, ingresso.quantidade);
@@ -47,7 +47,7 @@ function validaCompra(tipo, qtd) {
   if (ingressosDisponiveis[tipo] - qtd >= 0) {
     ingressosDisponiveis[tipo] -= qtd;
   } else {
-    let tipoIngresso =
+    const tipoIngresso =
       tipo == "pista"
         ? "Pista"
         : tipo == "inferior"
@@ -55,6 +55,7 @@ function validaCompra(tipo, qtd) {
         : tipo == "superior"
         ? "Cadeira superior"
         : "";
+
     alert(
       `Não há ingressos suficientes de ${tipoIngresso} para esta quantidade`
     );
